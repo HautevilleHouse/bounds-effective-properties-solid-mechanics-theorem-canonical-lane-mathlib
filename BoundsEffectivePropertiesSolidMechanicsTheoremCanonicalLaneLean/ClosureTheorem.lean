@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import BoundsEffectivePropertiesSolidMechanicsTheoremCanonicalLaneLean.EffectiveModulus
+import BoundsEffectivePropertiesSolidMechanicsTheoremCanonicalLaneLean.HashinShtrikmanBounds
+import BoundsEffectivePropertiesSolidMechanicsTheoremCanonicalLaneLean.VariationalPrinciples
+import BoundsEffectivePropertiesSolidMechanicsTheoremCanonicalLaneLean.VoigtReussBounds
+
+namespace HautevilleHouse
+namespace BoundsEffectivePropertiesSolidMechanicsTheoremCanonicalLaneLean
+
+def BoundsEffectivePropertiesClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem bounds_effective_properties_endgame (A : AdmissibleClass) : BoundsEffectivePropertiesClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end BoundsEffectivePropertiesSolidMechanicsTheoremCanonicalLaneLean
+end HautevilleHouse
